@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Server port="8795" shutdown="SHUTDOWN">
+  <!--Initialize Jasper prior to webapps are loaded. Documentation at /docs/jasper-howto.html -->
+  <Listener className="org.apache.catalina.core.JasperListener" />
+  <!-- Prevent memory leaks due to use of particular java/javax APIs-->
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+
+  <Service name="Catalina">
+
+    <Connector port="8793" protocol="HTTP/1.1" connectionTimeout="20000" URIEncoding="UTF-8" redirectPort="8443" />
+    <Engine name="Catalina" defaultHost="localhost">
+
+      <Host name="localhost"  appBase="webapps" unpackWARs="true" autoDeploy="false">
+
+         <Context path="/restsql" docBase="/usr/share/odn-restsql/restsql" allowLinking="true" >
+             <!-- make symlinks work in Tomcat -->
+             <Resources className="org.apache.naming.resources.FileDirContext" allowLinking="true" />
+
+             <Parameter name="org.restsql.properties" value="/etc/odn-simple/restsql/restsql.properties"
+        override="false"/>
+        </Context>
+
+      </Host>
+    </Engine>
+  </Service>
+</Server>
