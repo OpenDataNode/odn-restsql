@@ -1,0 +1,9 @@
+/etc/odn-restsql/restsql.properties
+/etc/odn-restsql/tomcat7/catalina.properties
+/etc/odn-restsql/tomcat7/context.xml
+/etc/odn-restsql/tomcat7/logging.properties
+/etc/odn-restsql/tomcat7/server.xml
+/etc/odn-restsql/tomcat7/web.xml
+/etc/odn-simple/restsql/restsql.properties
+
+

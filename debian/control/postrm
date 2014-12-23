@@ -18,34 +18,47 @@ set -e
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
+delete_user() {
+    deluser odn-restsql
+}
+
 case "$1" in
 
     remove|abort-install|disappear)
-   # backend jar and libs
+    if [ -d /usr/share/odn-restsql ] ; then
+       rm -rf /usr/share/odn-restsql 
+    fi
    
-    if [ -h /usr/share/odn-restsql/conf ] ; then
-       rm -f /usr/share/odn-restsql/conf
+    if [ -d /var/share/odn-restsql ] ; then
+       rm -rf /var/share/odn-restsql
     fi
     
-    if [ -h /usr/share/odn-restsql/logs ] ; then
-       rm -f /usr/share/odn-restsql/logs
+    if [ -d /var/odn-simple/restsql ] ; then
+       rm -rf /var/odn-simple/restsql
+    fi
+ 
+    if [ -d /var/share/odn-restsql ] ; then
+       rm -rf /var/share/odn-restsql
     fi
     
-    if [ -h /usr/share/odn-restsql/temp ] ; then
-       rm -f /usr/share/odn-restsql/temp
+    if [ -d /var/lib/odn-restsql  ] ; then
+       rm -rf /var/lib/odn-restsql 
     fi
     
-    if [ -h /usr/share/odn-restsql/conf ] ; then
-        rm -f /usr/share/odn-restsql/conf
-    fi
-    
-    if [ -h /usr/share/odn-restsql/work ] ; then
-       rm -f /usr/share/odn-restsql/work
-    fi
+    if [ -d /var/cache/odn-restsql  ] ; then
+       rm -rf /var/cache/odn-restsql
+    fi    
+   
+    delete_user
    
     ;;
  
     purge)
+     if [ -d /var/log/odn-restsql ] ; then
+       rm -rf /var/log/odn-restsql
+     fi
+    
+    
 
 
     ;;
