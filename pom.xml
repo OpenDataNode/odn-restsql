@@ -2,7 +2,8 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>odn-restsql</artifactId>
     <groupId>odn-restsql</groupId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.8.9</version>
+
     <profiles>
         <profile>
             <id>tools.jar</id>
