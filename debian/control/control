@@ -1,6 +1,6 @@
 Package: odn-restsql
 Source: odn-restsql
-Version: 1.0.0
+Version: 0.8.9
 Section: java
 Priority: extra
 Architecture: all
