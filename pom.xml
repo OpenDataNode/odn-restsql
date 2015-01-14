@@ -3,10 +3,7 @@
     <artifactId>odn-restsql</artifactId>
     <groupId>odn-restsql</groupId>
     <version>0.8.9</version>
-    <properties>
-        <debian-version>1-SNAPSHOT</debian-version>
-    </properties>
-    
+   
     <profiles>
         <profile>
             <id>tools.jar</id>
@@ -48,7 +45,7 @@
                         </goals>
                         <configuration>
                             <controlDir>debian/control</controlDir>
-                            <deb>${project.build.directory}/${artifactId}_${version}-${debian-version}_all.deb</deb>
+                            <deb>${project.build.directory}/${artifactId}_${version}_all.deb</deb>
                             <dataSet>
                                 <data>
                                     <src>${basedir}/debian/etc</src>

@@ -1,4 +1,4 @@
-odn-restsql (0.8.9-1-SNAPSHOT) unstable; urgency=low
+odn-restsql (0.8.9) stable; urgency=low
 
   * Initial release.
 
